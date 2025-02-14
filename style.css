@@ -55,9 +55,6 @@ body {
     left: 15px;
     box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
     transition: top 0.5s;
-    /* display: grid;
-    place-items: center; 
-    text-align: center; */
   }
   
   .card:before {
