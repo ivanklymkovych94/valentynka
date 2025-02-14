@@ -1,27 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const card = document.querySelector(".card");
     const container = document.querySelector(".container");
+    const card = document.querySelector(".card");
+    const body = document.querySelector("body");
 
-    card.style.transition = "top 0.5s";
-
-    const showCard = (event) => {
-        event.stopPropagation();
+    container.addEventListener("mouseenter", () => {
+        card.style.transition = "top 0.5s";
         card.style.top = "-90px";
-    };
+    });
 
-    const hideCard = () => {
-        setTimeout(() => {
-            card.style.top = "0";
-        }, 300); 
-    };
+    container.addEventListener("mouseleave", () => {
+        card.style.transition = "top 0.5s";
+        card.style.top = "0";
+    });
 
-    // Події для миші
-    container.addEventListener("mouseenter", showCard);
-    container.addEventListener("mouseleave", hideCard);
-    container.addEventListener("click", showCard);
-    document.body.addEventListener("click", hideCard, true);
+    container.addEventListener("click", () => {
+        card.style.transition = "top 0.5s";
+        card.style.top = "-90px";
+    }, );
 
-    // Події для сенсорних пристроїв
-    container.addEventListener("touchstart", showCard);
-    document.body.addEventListener("touchstart", hideCard, true);
+    body.addEventListener("click", () => {
+        card.style.transition = "top 0.5s";
+        card.style.top = "0";
+    }, true);
 });
